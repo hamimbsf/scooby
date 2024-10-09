@@ -30,42 +30,71 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="container mx-auto w-11/12 lg:w-10/12">
+    <nav
+      class="container mx-auto w-11/12 lg:w-10/12"
+      aria-label="Main Navigation"
+    >
       <div class="navbar bg-base-100 lg:py-8">
+        <!-- Brand/Logo -->
         <div class="flex-1">
-          <a class="btn btn-ghost text-xs lg:text-4xl uppercase gap-0"
-            >Sc<img class="lg:h-12 h-5" src="./images/scooby.png" />by</a
+          <a
+            href="#"
+            class="btn btn-ghost text-xs lg:text-4xl uppercase gap-0"
+            aria-label="Scooby Home"
           >
+            Sc
+            <img
+              class="lg:h-12 h-5"
+              src="./images/scooby.png"
+              alt="Scooby Logo"
+            />
+            by
+          </a>
         </div>
+
+        <!-- Navigation Buttons -->
         <div class="flex-none gap-1 lg:gap-4">
+          <!-- Home Button -->
           <div class="tooltip tooltip-bottom" data-tip="Home">
             <button
+              aria-label="Home"
               class="btn btn-ghost btn-circle bg-[#12132D] bg-opacity-10 lg:btn-lg btn-xs"
             >
               <i class="fa fa-home"></i>
             </button>
           </div>
+
+          <!-- Edit Button -->
           <div class="tooltip tooltip-bottom" data-tip="Edit">
             <button
+              aria-label="Edit"
               class="btn btn-ghost btn-circle bg-[#12132D] bg-opacity-10 lg:btn-lg btn-xs"
             >
               <i class="fa-solid fa-pen"></i>
             </button>
           </div>
+
+          <!-- Add User Button -->
           <div class="tooltip tooltip-bottom" data-tip="Add">
             <button
+              aria-label="Add User"
               class="btn btn-ghost btn-circle bg-[#12132D] bg-opacity-10 lg:btn-lg btn-xs"
             >
               <i class="fa-solid fa-user-plus"></i>
             </button>
           </div>
+
+          <!-- Marked Button -->
           <div class="tooltip tooltip-bottom" data-tip="Marked">
             <button
+              aria-label="Marked Items"
               class="btn btn-ghost btn-circle bg-[#12132D] bg-opacity-10 lg:btn-lg btn-xs"
             >
               <i class="fa-regular fa-flag"></i>
             </button>
           </div>
+
+          <!-- Sign In Button -->
           <button
             class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg rounded-full lg:px-20 px-4 bg-primary text-white hover:text-primary hover:bg-gray-200 border-none"
           >
@@ -83,25 +112,36 @@
           class="hero min-h-96 rounded-3xl"
           style="background-image: url(./images/bg.png)"
         >
+          <!-- Hero Overlay -->
           <div class="hero-overlay rounded-3xl lg:block hidden">
-            <img class="w-full h-full" src="./images/bgbanner.png" alt="" />
+            <img
+              class="w-full h-full"
+              src="./images/bgbanner.png"
+              alt="Background Banner"
+            />
           </div>
+
+          <!-- Hero Content -->
           <div
             class="hero-content text-neutral-content py-12 lg:py-48 lg:flex-row flex-col gap-8 lg:gap-14"
           >
+            <!-- Left Content: Title and Search -->
             <div class="lg:max-w-lg lg:space-y-8">
               <h1 class="mb-5 text-3xl font-extrabold lg:text-6xl">
                 Welcome to the
                 <span
                   class="bg-gradient-to-r from-primary to-black-100 text-transparent bg-clip-text"
-                  >ScOOby </span
-                >Forum
+                >
+                  ScOOby
+                </span>
+                Forum
               </h1>
               <p class="mb-5 lg:text-xl text-lg font-light">
                 Here you can filter the posts by the latest, most popular, and
-                other type of categories, also enjoy the modern aesthetic
-                design.
+                other categories. Enjoy the modern aesthetic design.
               </p>
+
+              <!-- Search Input -->
               <label
                 class="input input-bordered flex items-center gap-2 w-4/5 rounded-full lg:py-8"
               >
@@ -112,16 +152,18 @@
                   placeholder="Search Here Anything..."
                 />
                 <button
-                onclick="handleSearchByCategory()"
                   id="searchPostsBtn"
                   class="btn rounded-full bg-primary text-white hover:text-primary hover:bg-blue-950"
+                  onclick="handleSearchByCategory()"
                 >
                   Search
                 </button>
               </label>
             </div>
+
+            <!-- Right Content: Statistics -->
             <div
-              class="lg:max-w-md bg-white h-44 lg:h-52 lg:min-w-80 w-4/5 rounded-3xl flex flex-row items-center justify-evenly *:text-black lg:text-lg text-xs"
+              class="lg:max-w-md bg-white h-44 lg:h-52 lg:min-w-80 w-4/5 rounded-3xl flex flex-row items-center justify-evenly lg:text-lg text-xs text-black"
             >
               <div class="flex flex-col gap-5">
                 <p>Registered Users</p>
@@ -142,6 +184,7 @@
 
       <!-- discussion section -->
       <section class="container mx-auto w-11/12 lg:w-10/12 my-12 lg:my-24">
+        <!-- Section Title and Description -->
         <div
           class="flex lg:w-2/5 mx-auto flex-col items-center justify-center space-y-8 lg:my-12"
         >
@@ -149,41 +192,51 @@
             Let's Discuss
           </h2>
           <p class="opacity-60 text-center lg:text-xl">
-            With the modern design and the latest features, you can discuss
-            whatever you want and see other people's opinions or discussions,
-            also you can see by categories and mark as read.
+            With modern design and the latest features, you can discuss whatever
+            you want, see other people's opinions, and filter by categories. You
+            can also mark discussions as read.
           </p>
         </div>
-        <!-- discussions with selections -->
+
+        <!-- Discussions and Sidebar Section -->
         <div class="flex lg:flex-row flex-col gap-8 my-12">
+          <!-- Discussions Section -->
           <div id="post-container" class="lg:w-8/12 space-y-5">
- <!-- demo card showing without dynamic value  -->
- 
-
-
+            <!-- Placeholder for loading -->
             <div class="flex w-full justify-center">
               <span
                 id="postLoader"
                 class="loading loading-spinner loading-lg lg:mt-24 text-primary hidden"
               ></span>
             </div>
-            <!-- dynamic content -->
+            <!-- Dynamic content will go here -->
           </div>
-          <div class="lg:w-4/12">
-            <div class="p-6 space-y-4 bg-[#F3F3F5] rounded-3xl">
-              <div class="flex items-center justify-between">
-                <h4 class="font-bold text-xl">Title</h4>
-                <p class="opacity-50">
-                  <i class="fa-solid fa-check-double text-green-500"></i> Mark
-                  as read (<span id="markAsReadCounter">0</span>)
-                </p>
-              </div>
-              <div class="space-y-4 *:opacity-70" id="markAsReadContainer">
-                <!-- dynamic content -->
+        </div>
+      </section>
+      <!-- dynamic section -->
+      <section
+        class="lg:w-10/12 w-11/12 mt-7 container mx-auto flex flex-col lg:flex-row space-y-4 justify-between"
+      >
+        <div
+          id="dynamic-section"
+          class="flex flex-col space-y-4 lg:w-7/12"
+        ></div>
+        <!-- Sidebar: Mark as Read -->
+        <div class="lg:w-4/12">
+          <div class="p-6 space-y-4 bg-[#F3F3F5] rounded-xl shadow-lg">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-xl">Discussions</h4>
+              <p class="opacity-50 flex items-center">
+                <i class="fa-solid fa-check-double text-green-500 mr-2"></i>
+                Mark as read (<span id="markAsReadCounter">0</span>)
+              </p>
+            </div>
 
-                
+            <!-- Mark as Read Content -->
+            <div id="markAsReadContainer" class="space-y-4">
+              <!-- Dynamic content will go here -->
 
-              </div>
+
             </div>
           </div>
         </div>
@@ -192,88 +245,60 @@
       <!-- forum section -->
       <section class="container mx-auto lg:w-10/12 w-11/12 my-8 lg:my-12">
         <div
-          class="lg:p-16 rounded-3xl *:text-white bg-[#12132D] p-6 flex flex-col-reverse lg:flex-row justify-center items-center gap-8"
+          class="bg-[#12132D] p-6 lg:p-16 rounded-3xl flex flex-col-reverse lg:flex-row justify-center items-center gap-8 text-white"
         >
+          <!-- Text Section -->
           <div class="lg:space-y-8 space-y-5 lg:w-7/12">
             <h2 class="font-extrabold text-2xl lg:text-4xl">Join Our Forum</h2>
-            <p class="opacity-60">
-              Dont forget to share your unforgettable moments with us and also
-              dont forget to join our forum to get the latest news and updates.
+            <p class="opacity-60 lg:text-lg text-sm">
+              Don't forget to share your unforgettable moments with us and join
+              our forum to get the latest news and updates.
             </p>
             <button
-              class="btn bg-primary text-white font-extrabold rounded-full border-none lg:px-16 lg:btn-lg hover:bg-white hover:text-primary"
+              class="btn bg-primary text-white font-extrabold rounded-full border-none lg:px-16 lg:btn-lg hover:bg-white hover:text-primary transition-all duration-300 ease-in-out"
             >
               Register Now
             </button>
           </div>
+          <!-- Image Section -->
           <div class="lg:w-5/12 flex justify-end">
-            <img src="./images/joinforum.png" alt="form image" />
+            <img
+              src="./images/joinforum.png"
+              alt="Join Forum"
+              class="w-full h-auto object-cover rounded-2xl shadow-md"
+            />
           </div>
         </div>
       </section>
 
       <!-- latest post section -->
       <section
-        class="container mx-auto lg:w-10/12 w-11/12 *:text-center lg:my-18 my-8"
+        class="container mx-auto lg:w-10/12 w-11/12 text-center my-12 lg:my-20"
       >
+        <!-- Header Section -->
         <div
           class="flex lg:w-2/5 mx-auto flex-col items-center justify-center p-4 space-y-4"
         >
-          <h2 class="font-extrabold text-2xl lg:text-5xl">Latest Posts</h2>
-          <p class="opacity-60">
-            Got mind blowing ideas? Share with us and get the latest updates and
-            news too from our forum.
+          <h2 class="font-extrabold text-3xl lg:text-5xl leading-tight">
+            Latest Posts
+          </h2>
+          <p class="opacity-70 lg:text-lg">
+            Got mind-blowing ideas? Share them with us and stay updated with the
+            latest news from our forum.
           </p>
         </div>
+
+        <!-- Posts Section -->
         <div
           id="latest-post-container"
-          class="flex gap-5 lg:flex-row flex-col items-center justify-evenly"
+          class="flex gap-6 lg:flex-row flex-col items-center justify-center mt-10"
         >
-         <!-- show latest post in span tag wihtout dynamic value  -->
-         <div class="card lg:w-96 pb-5 bg-base-100 shadow-2xl">
-          <figure class="lg:px-6 px-4 pt-4 lg:pt-8">
-              <img
-                  src=${e.cover_image}
-                  alt="Shoes"
-                  class="rounded-xl"
-              />
-          </figure>
-          <div class="p-5 lg:p-10 space-y-4 lg:space-y-5">
-              <p class="opacity-50 text-start">
-                  <i class="fa-solid fa-calendar-days me-2"></i>author?.posted_date || "No Publish Date"
-              </p>
-              <h2 class="card-title text-start">title</h2>
-              <p class="text-start">
-                  description
-              </p>
-              <div class="card-actions flex gap-5 items-center">
-                  <div class="avatar">
-                      <div
-                          class="lg:w-12 w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                      >
-                          <img
-                          src=${e.profile_image}
-                          />
-                      </div>
-                  </div>
-              <div>
-              <h3 class="text-start font-extrabold">author.name</h3>
-              <p class="text-start opacity-60">author?.designation || "Unknown"</p>
-          </div>
-      </div>
-        
-
+          <!-- Example Static Card -->
+          <!-- Loader -->
           <span
             id="latestPostLoader"
             class="loading loading-infinity loading-lg lg:mt-24 text-primary hidden"
-          >
-        
-
-          
-        
-        
-        </span>
-          <!-- dynamic content -->
+          ></span>
         </div>
       </section>
     </main>
@@ -318,6 +343,6 @@
       </div>
     </footer>
     <!-- scripts -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
